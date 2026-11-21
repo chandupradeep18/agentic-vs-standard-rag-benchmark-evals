@@ -1,0 +1,97 @@
+$ uv run --active python eval_scarf.py
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 1594.30it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Vector store initialized. Collection: All_documents
+Existing documents in collection: 0
+[INFO] Loaded embedding model: all-MiniLM-L6-v2
+[DEBUG] Loading PDF: D:\Github\AI-Engineering\Agentic AI\Documents\ECommerce_Marketplace_Phase1_Backend_Guide_v2.pdf
+[DEBUG] Loaded 37 PDF docs from D:\Github\AI-Engineering\Agentic AI\Documents\ECommerce_Marketplace_Phase1_Backend_Guide_v2.pdf
+[DEBUG] Loading PDF: D:\Github\AI-Engineering\Agentic AI\Documents\python_pandas_projects.pdf
+[DEBUG] Loaded 3 PDF docs from D:\Github\AI-Engineering\Agentic AI\Documents\python_pandas_projects.pdf
+[DEBUG] Loading PDF: D:\Github\AI-Engineering\Agentic AI\Documents\SQL_Analytics_and_Database_Design_Projects.pdf
+[DEBUG] Loaded 3 PDF docs from D:\Github\AI-Engineering\Agentic AI\Documents\SQL_Analytics_and_Database_Design_Projects.pdf
+[DEBUG] Loading Text: D:\Github\AI-Engineering\Agentic AI\Documents\ai_engineering_hub_beginner_intermediate_library_list.txt
+[DEBUG] Loaded 1 Text docs from D:\Github\AI-Engineering\Agentic AI\Documents\ai_engineering_hub_beginner_intermediate_library_list.txt
+[DEBUG] Loading Markdown: D:\Github\AI-Engineering\Agentic AI\Documents\ECommerce_Marketplace_Phase1_Backend_Guide_v2.md
+[DEBUG] Loaded 1 Markdown docs from D:\Github\AI-Engineering\Agentic AI\Documents\ECommerce_Marketplace_Phase1_Backend_Guide_v2.md
+[INFO] Building vector store from 45 raw documents...
+[INFO] Split 45 documents into 300 chunks.
+[INFO] Generating embeddings for 300 chunks...
+Batches: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:13<00:00,  1.34s/it]
+[INFO] Embeddings shape: (300, 384)
+Adding 300 documents to vector store...
+Successfully added 300 documents to vector store
+Total documents in collection: 300
+Vector store initialized. Collection: All_document
+Existing documents in collection: 0
+[INFO] Loaded 45 raw documents from D:\Github\AI-Engineering\Agentic AI\Documents
+[INFO] Building vector store from 45 raw documents...
+[INFO] Split 45 documents into 315 chunks.
+Embedding Completed : 32 / 315
+Embedding Completed : 64 / 315
+Embedding Completed : 96 / 315
+Embedding Completed : 128 / 315
+Embedding Completed : 160 / 315
+Embedding Completed : 192 / 315
+Embedding Completed : 224 / 315
+Embedding Completed : 256 / 315
+Embedding Completed : 288 / 315
+Embedding Completed : 315 / 315
+[INFO] Created Qdrant collection 'All_document' (dim=4096, distance=COSINE)
+Adding 315 documents to vector store...
+Successfully added 315 documents to vector store
+Total documents in collection: 315
+
+[INFO] Evaluating App1_Agentic_Chroma...
+Retrieved 5 documents (after filtering)
+  Q: What are the two main design changes introduc... | 1.18s | Acc:4 Rel:5 Comp:4 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: In the E-Commerce Marketplace JWT authenticat... | 0.88s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: What business rules govern pricing, uniquenes... | 0.83s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: How should file and image uploads be handled ... | 12.8s | Acc:4 Rel:5 Comp:4 Grnd:4
+Retrieved 5 documents (after filtering)
+  Q: Which project in the Python Pandas Project Re... | 16.74s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: What does the Uber India Data Analysis projec... | 19.72s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: What are the details of the NovaMart E-Commer... | 21.01s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: Which NextWork SQL project focuses on fixing ... | 16.97s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents (after filtering)
+  Q: Which Python libraries are listed under Evalu... | 15.88s | Acc:1 Rel:1 Comp:1 Grnd:1
+Retrieved 5 documents (after filtering)
+Retrieved 5 documents (after filtering)
+  Q: What is the recommended Redis caching TTL for... | 46.32s | Acc:5 Rel:5 Comp:5 Grnd:5
+
+[INFO] Evaluating App2_Standard_Qdrant...
+Retrieved 5 documents
+  Q: What are the two main design changes introduc... | 11.81s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: In the E-Commerce Marketplace JWT authenticat... | 12.25s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: What business rules govern pricing, uniquenes... | 32.18s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: How should file and image uploads be handled ... | 15.95s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: Which project in the Python Pandas Project Re... | 6.99s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: What does the Uber India Data Analysis projec... | 15.21s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: What are the details of the NovaMart E-Commer... | 6.1s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 4 documents
+  Q: Which NextWork SQL project focuses on fixing ... | 5.81s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 3 documents
+  Q: Which Python libraries are listed under Evalu... | 10.98s | Acc:5 Rel:5 Comp:5 Grnd:5
+Retrieved 5 documents
+  Q: What is the recommended Redis caching TTL for... | 4.26s | Acc:5 Rel:5 Comp:5 Grnd:5
+
+================ SCARF-STYLE BENCHMARK SUMMARY ================
+Pipeline                 Latency(s)  Acc    Rel    Comp   Grnd  
+---------------------------------------------------------------
+App1_Agentic_Chroma      15.23       4.40   4.60   4.40   4.50  
+App2_Standard_Qdrant     12.15       5.00   5.00   5.00   5.00  
+===============================================================
+
+[INFO] Detailed results saved to scarf_eval_results.csv

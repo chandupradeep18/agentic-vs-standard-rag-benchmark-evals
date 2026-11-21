@@ -1,0 +1,13 @@
+[project]
+name = "rag-pipeline"
+version = "0.1.0"
+description = "Standard RAG Pipeline with Qdrant and NVIDIA"
+readme = "README.md"
+authors = [
+    { name = "chandupradeep", email = "chandupradeep@outlook.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false

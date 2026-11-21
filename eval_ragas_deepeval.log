@@ -1,0 +1,58 @@
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 3456.99it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Vector store initialized. Collection: File_Document
+Existing documents in collection: 300
+[INFO] Loaded embedding model: all-MiniLM-L6-v2
+[INFO] Using existing collection 'File_Document' (300 chunks). Skipping indexing.
+Vector store initialized. Collection: File_Document
+Existing documents in collection: 315
+[INFO] Using existing collection 'File_Document' (315 chunks). Skipping indexing.
+
+[INFO] Collecting outputs from App1_Agentic_Chroma...
+Retrieved 5 documents (after filtering)
+Retrieved 5 documents (after filtering)
+Retrieved 5 documents (after filtering)
+Retrieved 5 documents (after filtering)
+
+[INFO] Collecting outputs from App2_Standard_Qdrant...
+Retrieved 5 documents
+Retrieved 5 documents
+Retrieved 5 documents
+Retrieved 4 documents
+[INFO] Saved RAG outputs to collected_outputs.json
+
+[INFO] Running Ragas evaluation...
+Loading weights: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 103/103 [00:00<00:00, 1810.32it/s]
+  [App1_Agentic_Chroma] What are the two main design changes int... | Faith:1.0 Rel:0.702 Prec:1.0 Rec:1.0
+  [App1_Agentic_Chroma] In the E-Commerce Marketplace JWT authen... | Faith:1.0 Rel:0.735 Prec:1.0 Rec:1.0
+  [App1_Agentic_Chroma] What does the Uber India Data Analysis p... | Faith:0.25 Rel:0.895 Prec:1.0 Rec:1.0
+  [App1_Agentic_Chroma] Which NextWork SQL project focuses on fi... | Faith:1.0 Rel:0.84 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] What are the two main design changes int... | Faith:1.0 Rel:0.702 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] In the E-Commerce Marketplace JWT authen... | Faith:1.0 Rel:0.811 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] What does the Uber India Data Analysis p... | Faith:1.0 Rel:0.895 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] Which NextWork SQL project focuses on fi... | Faith:1.0 Rel:0.906 Prec:1.0 Rec:1.0
+
+=== RAGAS SUMMARY (0.0 - 1.0) ===
+                      faithfulness  answer_relevancy  context_precision  context_recall
+pipeline                                                                               
+App1_Agentic_Chroma          0.812             0.793                1.0             1.0
+App2_Standard_Qdrant         1.000             0.828                1.0             1.0
+
+[INFO] Running DeepEval evaluation...
+  [App1_Agentic_Chroma] What are the two main design changes int... | Faith:1.0 Rel:1.0 Prec:1.0 Rec:1.0
+[WARNING] DeepEval answer_relevancy failed on 'In the E-Commerce Marketplace ': Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.
+  [App1_Agentic_Chroma] In the E-Commerce Marketplace JWT authen... | Faith:1.0 Rel:None Prec:1.0 Rec:1.0
+  [App1_Agentic_Chroma] What does the Uber India Data Analysis p... | Faith:1.0 Rel:1.0 Prec:1.0 Rec:1.0
+  [App1_Agentic_Chroma] Which NextWork SQL project focuses on fi... | Faith:1.0 Rel:1.0 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] What are the two main design changes int... | Faith:1.0 Rel:1.0 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] In the E-Commerce Marketplace JWT authen... | Faith:1.0 Rel:1.0 Prec:1.0 Rec:1.0
+  [App2_Standard_Qdrant] What does the Uber India Data Analysis p... | Faith:1.0 Rel:1.0 Prec:0.5 Rec:1.0
+  [App2_Standard_Qdrant] Which NextWork SQL project focuses on fi... | Faith:1.0 Rel:1.0 Prec:0.5 Rec:1.0
+
+=== DEEPEVAL SUMMARY (0.0 - 1.0) ===
+                      faithfulness  answer_relevancy  contextual_precision  contextual_recall
+pipeline                                                                                     
+App1_Agentic_Chroma            1.0               1.0                  1.00                1.0
+App2_Standard_Qdrant           1.0               1.0                  0.75                1.0
+
+[INFO] Saved full reports to ragas_eval_results.csv and deepeval_eval_results.csv

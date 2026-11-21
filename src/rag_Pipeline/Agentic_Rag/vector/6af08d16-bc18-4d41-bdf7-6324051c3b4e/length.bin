@@ -1,0 +1,3 @@
+| Vendor context | X-Vendor-Id request header for users with several employers | Tells the API which employment to apply; validated against the user's active employments on every call. |
+| Header | Authorization: Bearer access_token | Standard. |
+| Throttling | Strict rate on login, OTP and register endpoints (for example 5 per minute per IP and per identifier) | Brute-force and OTP abuse protecti

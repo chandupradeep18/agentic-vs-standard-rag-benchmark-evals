@@ -1,0 +1,9 @@
+pipeline,question,faithfulness,answer_relevancy,context_precision,context_recall
+App1_Agentic_Chroma,What are the two main design changes introduced in Revision 2 of the E-Commerce Marketplace Phase 1 Backend Guide?,1.0,0.702,1.0,1.0
+App1_Agentic_Chroma,"In the E-Commerce Marketplace JWT authentication design, what are the access and refresh token lifetimes, and why are vendor role and scope excluded from JWT claims?",1.0,0.735,1.0,1.0
+App1_Agentic_Chroma,What does the Uber India Data Analysis project analyze according to the Pandas project list?,0.25,0.895,1.0,1.0
+App1_Agentic_Chroma,Which NextWork SQL project focuses on fixing slow PostgreSQL queries and what tools does it use?,1.0,0.84,1.0,1.0
+App2_Standard_Qdrant,What are the two main design changes introduced in Revision 2 of the E-Commerce Marketplace Phase 1 Backend Guide?,1.0,0.702,1.0,1.0
+App2_Standard_Qdrant,"In the E-Commerce Marketplace JWT authentication design, what are the access and refresh token lifetimes, and why are vendor role and scope excluded from JWT claims?",1.0,0.811,1.0,1.0
+App2_Standard_Qdrant,What does the Uber India Data Analysis project analyze according to the Pandas project list?,1.0,0.895,1.0,1.0
+App2_Standard_Qdrant,Which NextWork SQL project focuses on fixing slow PostgreSQL queries and what tools does it use?,1.0,0.906,1.0,1.0
